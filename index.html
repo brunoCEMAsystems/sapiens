@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sapiens & Sapiens</title>
+  <meta name="description" content="Loja moderna de tecnologia para engenheiros de hardware e software. Microcontroladores, sensores, ferramentas, licenças, cursos e APIs." />
+  <meta name="theme-color" content="#36c967" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#produtos">Pular para os produtos</a>
+
+  <header class="top">
+    <div class="topbar container shell">
+      <button class="icon-btn" id="menuBtn" aria-label="Abrir menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <a href="#" class="brand" aria-label="Ir para a página inicial">
+        <span>Sapiens & Sapiens</span>
+      </a>
+
+      <form class="search" role="search" aria-label="Busca global" onsubmit="return false;">
+        <input id="searchInput" type="search" placeholder="Digite para pesquisar..." autocomplete="off" aria-label="Buscar produtos" />
+        <button type="button" id="clearSearch" class="clear" aria-label="Limpar busca">×</button>
+        <svg class="lens" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="#111" stroke-width="2.5"/>
+          <path d="M20 20l-3.5-3.5" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </form>
+
+      <button class="icon-btn" id="cartBtn" aria-label="Abrir carrinho" aria-controls="cartDrawer" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6h15l-1.5 9h-12L6 6z" stroke="#111" stroke-width="2" />
+          <circle cx="9" cy="20" r="1.8" fill="#111"/>
+          <circle cx="18" cy="20" r="1.8" fill="#111"/>
+        </svg>
+        <span id="cartCount" class="badge" aria-label="Itens no carrinho">0</span>
+      </button>
+    </div>
+
+    <div class="hero">
+      <div class="container hero__content">
+        <h1 class="hero__title">Tecnologia para engenheiros</h1>
+        <p class="hero__subtitle">Hardware, software, ferramentas e conhecimento — no mesmo lugar.</p>
+        <div class="hero__actions">
+          <a class="btn primary" href="#produtos">Comprar</a>
+          <a class="btn ghost" href="#sobre">Saiba mais</a>
+        </div>
+      </div>
+      <!-- Shapes inspiradas no mockup -->
+      <div class="shape shape-a"></div>
+      <div class="shape shape-b"></div>
+    </div>
+  </header>
+
+  <nav class="filters container" aria-label="Categorias">
+    <ul id="categoryChips" class="chip-list">
+      <li><button class="chip is-active" data-cat="all">Tudo</button></li>
+      <li><button class="chip" data-cat="hardware">Hardware</button></li>
+      <li><button class="chip" data-cat="microcontroladores">Microcontroladores</button></li>
+      <li><button class="chip" data-cat="sensores">Sensores</button></li>
+      <li><button class="chip" data-cat="ferramentas">Ferramentas</button></li>
+      <li><button class="chip" data-cat="software">Software</button></li>
+      <li><button class="chip" data-cat="licencas">Licenças</button></li>
+      <li><button class="chip" data-cat="cursos">Cursos</button></li>
+      <li><button class="chip" data-cat="apis">APIs</button></li>
+    </ul>
+  </nav>
+
+  <main id="produtos" class="container">
+    <section aria-live="polite" aria-busy="false">
+      <div id="productGrid" class="grid"></div>
+      <div id="emptyState" class="empty is-hidden">
+        <p>Nenhum item encontrado. Tente remover filtros ou buscar por outro termo.</p>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cartDrawer" class="cart" aria-hidden="true">
+    <div class="cart__header">
+      <h2>Seu carrinho</h2>
+      <button id="closeCart" class="icon-btn" aria-label="Fechar carrinho">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div id="cartItems" class="cart__items"></div>
+    <div class="cart__footer">
+      <div class="cart__row">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">R$ 0,00</strong>
+      </div>
+      <div class="cart__row">
+        <span>Frete</span>
+        <span>Grátis</span>
+      </div>
+      <hr />
+      <div class="cart__row total">
+        <span>Total</span>
+        <strong id="cartTotal">R$ 0,00</strong>
+      </div>
+      <div class="cart__actions">
+        <button id="clearCart" class="btn ghost">Limpar</button>
+        <button id="checkoutBtn" class="btn primary">Finalizar compra</button>
+      </div>
+    </div>
+  </aside>
+  <div id="overlay" class="overlay" hidden></div>
+
+  <footer class="footer container" id="sobre">
+    <div class="footer__grid">
+      <div>
+        <h3 class="brand brand--small">Sapiens & Sapiens</h3>
+        <p>Loja moderna projetada para engenheiros de hardware e software. Qualidade, performance e conhecimento em um só lugar.</p>
+      </div>
+      <nav aria-label="Links">
+        <ul class="footer__links">
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="mailto:contato@michels.tech">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer__copy">© <span id="year"></span> Sapiens & Sapiens. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
