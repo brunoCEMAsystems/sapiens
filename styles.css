@@ -95,8 +95,9 @@ button{font:inherit; cursor:pointer}
   position:relative; overflow:hidden; border-radius:28px; margin:0 20px 20px;
   background:radial-gradient(110% 120% at 10% 10%, var(--g1) 0%, var(--g2) 48%, var(--g3) 100%);
   min-height:48vh; display:flex; align-items:flex-end;
+  isolation: isolate;
 }
-.hero__content{padding:32px 22px 40px}
+.hero__content{position: relative; z-index: 2; padding:32px 22px 40px}
 .hero__title{color:#0d2a18}
 .hero__subtitle{color:#134727}
 .hero__actions{display:flex; gap:14px; margin-top:16px}
@@ -110,7 +111,13 @@ button{font:inherit; cursor:pointer}
 .btn.ghost{background:#fff; opacity:.9}
 
 /* Shapes diagonais inspiradas no mockup */
-.shape{position:absolute; right:0; transform:skewX(-20deg)}
+.shape{
+  position: absolute;
+  right: 0;
+  transform: skewX(-20deg);
+  z-index: 1;            /* abaixo do conteúdo */
+  pointer-events: none;  /* não bloqueia cliques/hover no conteúdo */
+}
 .shape-a{
   top:22%; width:40vw; height:32vh;
   background:linear-gradient(135deg, #c9ff72 0%, #9ed952 100%);
@@ -185,4 +192,5 @@ button{font:inherit; cursor:pointer}
   .shape-a,.shape-b{opacity:.6}
   .search{display:none}
   .topbar{gap:8px}
+
 }
