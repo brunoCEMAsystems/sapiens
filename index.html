@@ -15,51 +15,53 @@
 <body>
   <a class="skip-link" href="#produtos">Pular para os produtos</a>
 
-  <header class="top">
-    <div class="topbar container shell">
-      <button class="icon-btn" id="menuBtn" aria-label="Abrir menu">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M3 6h18M3 12h18M3 18h18" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-      </button>
+<header class="top">
+  <div class="topbar container shell">
+    <button class="icon-btn" id="menuBtn" aria-label="Abrir menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </button>
 
-      <a href="#" class="brand" aria-label="Ir para a página inicial">
-        <span>Sapiens & Sapiens</span>
-      </a>
+    <a href="#" class="brand" aria-label="Ir para a página inicial">
+      <!-- Logo: troque o src abaixo -->
+      <img class="brand__logo" src="macacologosapiens.png" alt="" width="32" height="32" />
+      <span class="brand__text">Sapiens &amp; Sapiens</span>
+    </a>
 
-      <form class="search" role="search" aria-label="Busca global" onsubmit="return false;">
-        <input id="searchInput" type="search" placeholder="Digite para pesquisar..." autocomplete="off" aria-label="Buscar produtos" />
-        <button type="button" id="clearSearch" class="clear" aria-label="Limpar busca">×</button>
-        <svg class="lens" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="11" cy="11" r="7" stroke="#111" stroke-width="2.5"/>
-          <path d="M20 20l-3.5-3.5" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-      </form>
+    <form class="search" role="search" aria-label="Busca global" onsubmit="return false;">
+      <input id="searchInput" type="search" placeholder="Digite para pesquisar..." autocomplete="off" aria-label="Buscar produtos" />
+      <button type="button" id="clearSearch" class="clear" aria-label="Limpar busca">×</button>
+      <svg class="lens" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" stroke="#111" stroke-width="2.5"/>
+        <path d="M20 20l-3.5-3.5" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </form>
 
-      <button class="icon-btn" id="cartBtn" aria-label="Abrir carrinho" aria-controls="cartDrawer" aria-expanded="false">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M6 6h15l-1.5 9h-12L6 6z" stroke="#111" stroke-width="2" />
-          <circle cx="9" cy="20" r="1.8" fill="#111"/>
-          <circle cx="18" cy="20" r="1.8" fill="#111"/>
-        </svg>
-        <span id="cartCount" class="badge" aria-label="Itens no carrinho">0</span>
-      </button>
-    </div>
+    <button class="icon-btn" id="cartBtn" aria-label="Abrir carrinho" aria-controls="cartDrawer" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 6h15l-1.5 9h-12L6 6z" stroke="#111" stroke-width="2" />
+        <circle cx="9" cy="20" r="1.8" fill="#111"/>
+        <circle cx="18" cy="20" r="1.8" fill="#111"/>
+      </svg>
+      <span id="cartCount" class="badge" aria-label="Itens no carrinho">0</span>
+    </button>
+  </div>
 
-    <div class="hero">
-      <div class="container hero__content">
-        <h1 class="hero__title">Tecnologia para engenheiros</h1>
-        <p class="hero__subtitle">Hardware, software, ferramentas e conhecimento — no mesmo lugar.</p>
-        <div class="hero__actions">
-          <a class="btn primary" href="#produtos">Comprar</a>
-          <a class="btn ghost" href="#sobre">Saiba mais</a>
-        </div>
+  <div class="hero">
+    <div class="container hero__content">
+      <h1 class="hero__title">Tecnologia para engenheiros</h1>
+      <p class="hero__subtitle">Hardware, software, ferramentas e conhecimento — no mesmo lugar.</p>
+      <div class="hero__actions">
+        <a class="btn primary" href="#produtos">Comprar</a>
+        <a class="btn ghost" href="#sobre">Saiba mais</a>
       </div>
-      <!-- Shapes inspiradas no mockup -->
-      <div class="shape shape-a" aria-hidden="true"></div>
-      <div class="shape shape-b" aria-hidden="true"></div>
     </div>
-  </header>
+    <!-- Shapes inspiradas no mockup -->
+    <div class="shape shape-a" aria-hidden="true"></div>
+    <div class="shape shape-b" aria-hidden="true"></div>
+  </div>
+</header>
 
   <nav class="filters container" aria-label="Categorias">
     <ul id="categoryChips" class="chip-list">
@@ -136,5 +138,6 @@
   <script src="app.js"></script>
 </body>
 </html>
+
 
 
